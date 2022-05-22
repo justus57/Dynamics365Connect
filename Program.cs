@@ -19,7 +19,11 @@ namespace Dynamics365Connect
                 Console.WriteLine("Setting up Dynamics 365 connection");
 
                 //Create the Dynamics 365 Connection:
-                CrmServiceClient oMSCRMConn = new Microsoft.Xrm.Tooling.Connector.CrmServiceClient("AuthType=Office365;Username=<USERNAME>;Password=<PASSWORD>;URL=<URL>;");
+                CrmServiceClient oMSCRMConn = new Microsoft.Xrm.Tooling.Connector.CrmServiceClient(
+                    "AuthType=Office365;" +
+                    "Username=<USERNAME>;" +
+                    "Password=<PASSWORD>;" +
+                    "URL=<URL>;");
 
                 //Create the IOrganizationService:
                 oServiceProxy = (IOrganizationService)oMSCRMConn.OrganizationWebProxyClient != null ?
